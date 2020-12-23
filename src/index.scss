@@ -51,3 +51,16 @@ code {
   --color-on-surface: #FFFFFF;
   --color-on-error: #000000;
 }
+
+@mixin for-size($range) {
+  $phone-upper-boundary: 600px;
+  $tablet-upper-boundary: 900px;
+
+  @if $range == phone {
+    @media (max-width: #{$phone-upper-boundary - 1}) { @content; }
+  } @else if $range == tablet {
+    @media (min-width: $phone-upper-boundary) { @content; }
+  } @else if $range == desktop {
+    @media (min-width: $tablet-upper-boundary) { @content; }
+  }
+}

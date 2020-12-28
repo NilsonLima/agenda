@@ -7,22 +7,6 @@ describe('DayCalendar', () => {
     const today = new Date();
     const dayCalendar = new DayCalendar(today);
 
-    it('should be able to return its week day', () => {
-      expect(dayCalendar.getWeekDay()).toEqual(today.getDay());
-    });
-
-    it('should be able to return its month day', () => {
-      expect(dayCalendar.getMonthDay()).toEqual(today.getDate());
-    });
-
-    it('should be able to return its respective month', () => {
-      expect(dayCalendar.getMonth()).toEqual(today.getMonth());
-    });
-
-    it('should be able to return its respective year', () => {
-      expect(dayCalendar.getYear()).toEqual(today.getFullYear());
-    });
-
     it('should be able to get forward nth date', () => {
       const tomorrow = addDays(today, 1);
       const tomorrowDayCalendar = dayCalendar.getNext();

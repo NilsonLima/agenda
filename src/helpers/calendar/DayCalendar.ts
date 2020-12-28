@@ -7,22 +7,6 @@ export default class DayCalendar extends BaseCalendar {
     super(referenceDate);
   }
 
-  getWeekDay(): number {
-    return this.referenceDate.getDay();
-  }
-
-  getMonthDay(): number {
-    return this.referenceDate.getDate();
-  }
-
-  getMonth(): number {
-    return this.referenceDate.getMonth();
-  }
-
-  getYear(): number {
-    return this.referenceDate.getFullYear();
-  }
-
   getNext(step = 1): DayCalendar {
     return new DayCalendar(addDays(this.referenceDate, step));
   }

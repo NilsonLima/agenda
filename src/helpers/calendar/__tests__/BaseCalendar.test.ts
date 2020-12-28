@@ -11,4 +11,25 @@ describe('BaseCalendar', () => {
       }
     });
   });
+
+  describe('for a given reference date', () => {
+    const today = new Date();
+    const baseCalendar = new BaseCalendar(today);
+
+    it('should be able to return its week day', () => {
+      expect(baseCalendar.getWeekDay()).toEqual(today.getDay());
+    });
+
+    it('should be able to return its month day', () => {
+      expect(baseCalendar.getMonthDay()).toEqual(today.getDate());
+    });
+
+    it('should be able to return its respective month', () => {
+      expect(baseCalendar.getMonth()).toEqual(today.getMonth());
+    });
+
+    it('should be able to return its respective year', () => {
+      expect(baseCalendar.getYear()).toEqual(today.getFullYear());
+    });
+  });
 });

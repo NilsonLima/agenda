@@ -7,4 +7,20 @@ export default class BaseCalendar {
     }
     this.referenceDate = referenceDate;
   }
+
+  getWeekDay(): number {
+    return this.referenceDate.getDay();
+  }
+
+  getMonthDay(): number {
+    return this.referenceDate.getDate();
+  }
+
+  getMonth(): number {
+    return this.referenceDate.getMonth();
+  }
+
+  getYear(): number {
+    return this.referenceDate.getFullYear();
+  }
 }
